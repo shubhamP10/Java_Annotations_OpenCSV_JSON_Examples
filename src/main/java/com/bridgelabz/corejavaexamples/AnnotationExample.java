@@ -24,25 +24,19 @@ public class AnnotationExample {
         System.out.println("Old Method Don't Use It.");
     }
 
-    @Override
-    @MethodInfo(author = "Shubham", comments = "Main Method", date = "23 Jun 2020", revision = 1)
-    public String toString() {
-        return "Overridden toString Method";
-    }
-
     public static void annotationExample() {
         try {
             for (Method method : AnnotationExample.class.getMethods()) {
                 if (method.isAnnotationPresent(MethodInfo.class)) {
                     try {
                         for (Annotation anno : method.getDeclaredAnnotations()) {
-                            System.out.println("Annotation in Method '"+method+"': "+anno);
+                            System.out.println("Annotation in Method '" + method + "': " + anno);
                         }
                         MethodInfo methodAnno = method.getAnnotation(MethodInfo.class);
                         if (methodAnno.revision() == 1) {
-                            System.out.println("Method with Revision no 1 = "+method);
+                            System.out.println("Method with Revision no 1 = " + method);
                         }
-                    } catch (Throwable throwable){
+                    } catch (Throwable throwable) {
                         throwable.printStackTrace();
                     }
                 }
@@ -50,5 +44,11 @@ public class AnnotationExample {
         } catch (SecurityException se) {
             se.printStackTrace();
         }
+    }
+
+    @Override
+    @MethodInfo(author = "Shubham", comments = "Main Method", date = "23 Jun 2020", revision = 1)
+    public String toString() {
+        return "Overridden toString Method";
     }
 }

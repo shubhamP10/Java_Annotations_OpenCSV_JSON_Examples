@@ -6,7 +6,7 @@ public class CSVUser {
     @CsvBindByName
     private String name;
 
-    @CsvBindByName(column = "EMAIL",required = true)
+    @CsvBindByName(column = "EMAIL", required = true)
     private String email;
 
     @CsvBindByName

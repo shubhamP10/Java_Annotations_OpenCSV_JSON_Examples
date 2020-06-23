@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.List;
 
 public class OpenCSVExample {
@@ -36,8 +35,8 @@ public class OpenCSVExample {
             List<CSVUser> csvUsers = csvToBean.parse();
             System.out.println("Form List<>");
             for (CSVUser csvUser : csvUsers) {
-                System.out.println("NAME : "+csvUser.getName());
-                System.out.println("EMAIL : "+csvUser.getEmail());
+                System.out.println("NAME : " + csvUser.getName());
+                System.out.println("EMAIL : " + csvUser.getEmail());
             }
 
         } finally {
