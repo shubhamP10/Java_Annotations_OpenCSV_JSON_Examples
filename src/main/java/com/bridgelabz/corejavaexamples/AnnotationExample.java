@@ -30,7 +30,7 @@ public class AnnotationExample {
         return "Overridden toString Method";
     }
 
-    public static void main(String[] args) {
+    public static void annotationExample() {
         try {
             for (Method method : AnnotationExample.class.getMethods()) {
                 if (method.isAnnotationPresent(MethodInfo.class)) {
